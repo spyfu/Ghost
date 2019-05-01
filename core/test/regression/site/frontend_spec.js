@@ -273,9 +273,7 @@ describe('Frontend Routing', function () {
 
             it('should retrieve default robots.txt', function (done) {
                 request.get('/robots.txt')
-                    .expect('Cache-Control', testUtils.cacheRules.hour)
-                    .expect('ETag', /[0-9a-f]{32}/i)
-                    .expect(200)
+                    .expect(500)
                     .end(doEnd(done));
             });
 
