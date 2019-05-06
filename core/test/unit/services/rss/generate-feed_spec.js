@@ -196,7 +196,7 @@ describe('RSS: Generate Feed', function () {
             xmlData.should.match(/<a href="#nowhere" title="Anchor URL">/);
 
             // relative URL - <a href="/about#nowhere" title="Relative URL">
-            xmlData.should.match(/<a href="http:\/\/my-ghost-blog.com\/about#nowhere" title="Relative URL">/);
+            xmlData.should.match(/<a href="https:\/\/my-ghost-blog.com\/about#nowhere" title="Relative URL">/);
 
             // protocol relative URL - <a href="//somewhere.com/link#nowhere" title="Protocol Relative URL">
             xmlData.should.match(/<a href="\/\/somewhere.com\/link#nowhere" title="Protocol Relative URL">/);
@@ -221,7 +221,7 @@ describe('RSS: Generate Feed', function () {
             xmlData.should.match(/<a href="#nowhere" title="Anchor URL">/);
 
             // relative URL - <a href="/about#nowhere" title="Relative URL">
-            xmlData.should.match(/<a href="http:\/\/my-ghost-blog.com\/blog\/about#nowhere" title="Relative URL">/);
+            xmlData.should.match(/<a href="https:\/\/my-ghost-blog.com\/blog\/about#nowhere" title="Relative URL">/);
 
             // absolute URL - <a href="http://somewhere.com/link#nowhere" title="Absolute URL">
             xmlData.should.match(/<a href="http:\/\/somewhere.com\/link#nowhere" title="Absolute URL">/);
