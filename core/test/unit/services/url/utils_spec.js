@@ -826,31 +826,31 @@ describe('Url', function () {
             var html = '<a href="/about#nowhere" title="Relative URL">',
                 result = urlService.utils.makeAbsoluteUrls(html, siteUrl, itemUrl).html();
 
-            result.should.match(/<a href="http:\/\/my-ghost-blog.com\/about#nowhere" title="Relative URL">/);
+            result.should.match(/<a href="https:\/\/my-ghost-blog.com\/about#nowhere" title="Relative URL">/);
         });
         it('[success] converts a relative URL including subdirectories', function () {
             var html = '<a href="/about#nowhere" title="Relative URL">',
                 result = urlService.utils.makeAbsoluteUrls(html, 'http://my-ghost-blog.com/blog', itemUrl).html();
 
-            result.should.match(/<a href="http:\/\/my-ghost-blog.com\/blog\/about#nowhere" title="Relative URL">/);
+            result.should.match(/<a href="https:\/\/my-ghost-blog.com\/blog\/about#nowhere" title="Relative URL">/);
         });
 
         it('asset urls only', function () {
             let html = '<a href="/about" title="Relative URL"><img src="/content/images/1.jpg">';
             let result = urlService.utils.makeAbsoluteUrls(html, siteUrl, itemUrl, {assetsOnly: true}).html();
 
-            result.should.match(/<img src="http:\/\/my-ghost-blog.com\/content\/images\/1.jpg">/);
+            result.should.match(/<img src="https:\/\/my-ghost-blog.com\/content\/images\/1.jpg">/);
             result.should.match(/<a href="\/about\" title="Relative URL">/);
 
             html = '<a href="/content/images/09/01/image.jpg">';
             result = urlService.utils.makeAbsoluteUrls(html, siteUrl, itemUrl, {assetsOnly: true}).html();
 
-            result.should.match(/<a href="http:\/\/my-ghost-blog.com\/content\/images\/09\/01\/image.jpg">/);
+            result.should.match(/<a href="https:\/\/my-ghost-blog.com\/content\/images\/09\/01\/image.jpg">/);
 
             html = '<a href="/blog/content/images/09/01/image.jpg">';
             result = urlService.utils.makeAbsoluteUrls(html, siteUrl, itemUrl, {assetsOnly: true}).html();
 
-            result.should.match(/<a href="http:\/\/my-ghost-blog.com\/blog\/content\/images\/09\/01\/image.jpg">/);
+            result.should.match(/<a href="https:\/\/my-ghost-blog.com\/blog\/content\/images\/09\/01\/image.jpg">/);
 
             html = '<img src="http://my-ghost-blog.de/content/images/09/01/image.jpg">';
             result = urlService.utils.makeAbsoluteUrls(html, siteUrl, itemUrl, {assetsOnly: true}).html();

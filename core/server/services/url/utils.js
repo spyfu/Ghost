@@ -432,7 +432,7 @@ function makeAbsoluteUrls(html, siteUrl, itemUrl, options = {assetsOnly: false})
             // compose an absolute URL
             // if the relative URL begins with a '/' use the blog URL (including sub-directory)
             // as the base URL, otherwise use the post's URL.
-            const baseUrl = attributeValue[0] === '/' ? siteUrl : itemUrl;
+            const baseUrl = attributeValue[0] === '/' ? siteUrl.replace('http://', 'https://') : itemUrl;
             attributeValue = urlJoin(baseUrl, attributeValue);
             el.attr(attributeName, attributeValue);
         });
