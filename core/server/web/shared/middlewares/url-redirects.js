@@ -2,6 +2,7 @@ const url = require('url');
 const path = require('path');
 const debug = require('ghost-ignition').debug('web:shared:mw:url-redirects');
 const urlService = require('../../../services/url');
+const config = require('../../../config');
 
 const _private = {};
 
@@ -76,7 +77,7 @@ _private.getBlogRedirectUrl = (options) => {
     debug('getBlogRedirectUrl', requestedHost, requestedUrl, blogHostWithProtocol);
 
     // CASE: configured canonical url is HTTPS, but request is HTTP, redirect to requested host + SSL
-    if (urlService.utils.isSSL(blogHostWithProtocol) && !secure) {
+    if (urlService.utils.isSSL(blogHostWithProtocol) && !secure && config.get('redirectSSL')) {
         debug('redirect because protocol does not match');
 
         return _private.redirectUrl({
