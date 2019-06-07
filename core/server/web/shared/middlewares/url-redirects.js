@@ -56,7 +56,7 @@ _private.getAdminRedirectUrl = (options) => {
     }
 
     // CASE: configured admin url is HTTPS, but request is HTTP
-    if (urlService.utils.isSSL(adminHostWithProtocol) && !secure) {
+    if (urlService.utils.isSSL(adminHostWithProtocol) && !secure && config.get('redirectSSL')) {
         debug('redirect because protocol does not match');
 
         return _private.redirectUrl({
