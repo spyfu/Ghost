@@ -41,7 +41,9 @@ const getSession = (req, res, next) => {
                 httpOnly: true,
                 path: urlService.utils.getSubdir() + '/ghost',
                 sameSite: 'lax',
-                secure: urlService.utils.isSSL(config.get('url'))
+                secure: (config.get('redirectSSL'))
+                    ? urlService.utils.isSSL(config.get('url'))
+                    : false,
             }
         });
     }
