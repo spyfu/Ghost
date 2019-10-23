@@ -1,6 +1,7 @@
 [submodule "content/themes/casper"]
 	path = content/themes/casper
 	url = ../../TryGhost/Casper.git
+	branch = master
 [submodule "core/client"]
 	path = core/client
 	url = ../../TryGhost/Ghost-Admin.git
