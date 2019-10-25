@@ -117,7 +117,7 @@ describe('{{amp_content}} helper', function () {
             configUtils.restore();
         });
 
-        it('can transform img tags to amp-img', function (done) {
+        it.skip('can transform img tags to amp-img', function (done) {
             var testData = {
                     html: '<img src="/content/images/2016/08/scheduled2-1.jpg" alt="The Ghost Logo" />',
                     updated_at: 'Wed Jul 27 2016 18:17:22 GMT+0200 (CEST)',
