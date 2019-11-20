@@ -1,8 +1,6 @@
 [submodule "content/themes/casper"]
 	path = content/themes/casper
 	url = https://github.com/spyfu/Casper.git
-	branch = master-spyfu
 [submodule "core/client"]
 	path = core/client
 	url = https://github.com/spyfu/Ghost-Admin.git
-	branch = master
